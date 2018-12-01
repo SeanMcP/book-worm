@@ -6,8 +6,8 @@
         "endDate": "",
         "genre": "fantasy",
         "comments": "Probably my favorite book",
-        "rating": "",
-        "wouldRecommend": "",
+        "rating": 0,
+        "wouldRecommend": false,
         "haveReadBefore": true
     }
 ]
