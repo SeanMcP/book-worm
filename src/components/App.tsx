@@ -4,8 +4,16 @@ import styled from "@emotion/styled";
 import BookList from "./BookList";
 import Header from "./Header";
 
+const StyledBody = styled.div`
+    background: linear-gradient(to top, #57EBF5, #003687);
+    height: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100%;
+`;
+
 const StyledDiv = styled.div`
-    margin: 1rem auto;
+    margin: 0 auto;
     max-width: 800px;
 `;
 
@@ -20,10 +28,12 @@ class App extends Component {
     }
     render() {
         return (
-            <StyledDiv>
-                <Header />
-                <BookList books={this.state.books} />
-            </StyledDiv>
+            <StyledBody>
+                <StyledDiv>
+                    <Header />
+                    <BookList books={this.state.books} />
+                </StyledDiv>
+            </StyledBody>
         );
     }
 }
