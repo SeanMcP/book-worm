@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 
 function formatDays(number: number) {
     if (number === 0) {
-        return `today`
+        return `today`;
     } else if (number === 1) {
         return `${number} day`;
     }
@@ -21,18 +21,14 @@ const Time = (props: TimeInt) => {
     let message;
     if (props.endDate) {
         // The book has been completed
-        const readingTime = endDate.diff(startDate, 'day');
-        message = `Completed (${formatDays(readingTime)})`
+        const readingTime = endDate.diff(startDate, "day");
+        message = `Completed (${formatDays(readingTime)})`;
     } else {
         // The book is in progress
-        const readingTime = dayjs().diff(startDate, 'day');
-        message = `In progress (${formatDays(readingTime)})`
+        const readingTime = dayjs().diff(startDate, "day");
+        message = `In progress (${formatDays(readingTime)})`;
     }
-    return (
-        <span className={'Time'}>
-            {message}
-        </span>
-    );
+    return <span className={"Time"}>{message}</span>;
 };
 
 export default Time;
