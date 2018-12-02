@@ -12,7 +12,9 @@ interface genreEmojiInt {
 
 const GenreIcon = (props: PropsInt) => {
     const genreEmoji: genreEmojiInt = {
-        fantasy: "🐉"
+        fantasy: "🐉",
+        nonfiction: "📰",
+        religion: "🙏"
     };
     const emoji = genreEmoji[props.genre] || "📕";
     return <Emoji className={"GenreIcon"} emoji={emoji} label={props.genre} />;

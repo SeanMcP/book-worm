@@ -3,6 +3,9 @@ import styled from "@emotion/styled";
 
 import BookList from "./BookList";
 import Header from "./Header";
+import Most from "./Most";
+
+import { BookInt } from './Book';
 
 const StyledBody = styled.div`
     background: linear-gradient(to top, #57EBF5, #003687);
@@ -19,12 +22,18 @@ const StyledDiv = styled.div`
 
 class App extends Component {
     state = {
-        books: []
+        books: [],
+        completed: []
     };
     componentDidMount() {
         fetch("./data/record.json")
             .then((raw) => raw.json())
-            .then((res) => this.setState({ books: res }));
+            .then((res) => {
+                this.setState({
+                    books: res,
+                    completed: res.filter((book: BookInt) => book.endDate)
+                });
+            });
     }
     render() {
         return (
@@ -32,6 +41,7 @@ class App extends Component {
                 <StyledDiv>
                     <Header />
                     <BookList books={this.state.books} />
+                    <Most completed={this.state.completed} />
                 </StyledDiv>
             </StyledBody>
         );
