@@ -6,8 +6,20 @@
         "endDate": "",
         "genre": "fantasy",
         "comments": "Probably my favorite book",
+        "pages": 0,
         "rating": 0,
         "wouldRecommend": false,
+        "haveReadBefore": true
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "startDate": "2018-10-01",
+        "endDate": "2018-11-01",
+        "genre": "fantasy",
+        "comments": "",
+        "rating": 5,
+        "wouldRecommend": true,
         "haveReadBefore": true
     }
 ]
