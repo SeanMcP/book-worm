@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import GenreIcon from "./GenreIcon";
 import Rating from "./Rating";
+import Recommendation from "./Recommendation";
 import Time from "./Time";
 export interface BookInt {
     title: string;
@@ -38,6 +39,8 @@ const Book = (props: BookInt) => {
             </header>
             <main>
                 {isComplete && <Rating rating={props.rating} />}
+                {" - "}
+                {isComplete && <Recommendation wouldRecommend={props.wouldRecommend} />}
             </main>
         </StyledLi>
     );
