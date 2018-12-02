@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import BookList from "./BookList";
 import Header from "./Header";
-import Most from "./Most";
+import Stats from "./Stats";
 
 import { BookInt } from './Book';
 
@@ -41,7 +41,7 @@ class App extends Component {
                 <StyledDiv>
                     <Header />
                     <BookList books={this.state.books} />
-                    <Most completed={this.state.completed} />
+                    <Stats completed={this.state.completed} />
                 </StyledDiv>
             </StyledBody>
         );

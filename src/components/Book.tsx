@@ -13,8 +13,6 @@ export interface BookInt {
     genre: string;
     comments: string;
     rating: number;
-    wouldRecommend: boolean;
-    haveReadBefore: boolean;
 }
 
 interface StyledLiInt {
