@@ -7,9 +7,7 @@
         "genre": "fantasy",
         "comments": "Probably my favorite book",
         "pages": 0,
-        "rating": 0,
-        "wouldRecommend": false,
-        "haveReadBefore": true
+        "rating": 0
     },
     {
         "title": "The Lord of the Rings",
@@ -17,9 +15,7 @@
         "startDate": "2018-10-01",
         "endDate": "2018-11-01",
         "genre": "fantasy",
-        "comments": "",
-        "rating": 5,
-        "wouldRecommend": true,
-        "haveReadBefore": true
+        "comments": "An epic ride!",
+        "rating": 5
     }
 ]
