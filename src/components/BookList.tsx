@@ -1,19 +1,24 @@
-import React from 'react';
+import React from "react";
+import styled from "@emotion/styled";
 
-import Book, { BookInt } from './Book';
+import Book, { BookInt } from "./Book";
 
 interface Props {
-    books: Array<BookInt>
+    books: Array<BookInt>;
 }
+
+const StyledUl = styled.ul`
+    list-style: none;
+    padding: 0;
+`;
 
 const BookList = (props: Props) => {
     return (
-        <ul className="BookList">
-            {props.books.map((book, i) =>{
-                console.log(book);
-                return <Book key={i} {...book} />
-            })}
-        </ul>
+        <StyledUl>
+            {props.books.map((book, i) => (
+                <Book key={i} {...book} />
+            ))}
+        </StyledUl>
     );
 };
 

@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import styled from "@emotion/styled";
 
 import BookList from "./BookList";
-import Header from './Header';
+import Header from "./Header";
+
+const StyledDiv = styled.div`
+    margin: 1rem auto;
+    max-width: 800px;
+`;
 
 class App extends Component {
     state = {
@@ -14,10 +20,10 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="App">
+            <StyledDiv>
                 <Header />
                 <BookList books={this.state.books} />
-            </div>
+            </StyledDiv>
         );
     }
 }

@@ -1,17 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import Emoji from './Emoji';
+import Emoji from "./Emoji";
+import styled from "@emotion/styled";
+
+const StyledHeader = styled.header`
+    margin: 1rem 0;
+`;
 
 const Header = () => {
     return (
-        <header className="Header">
-            <h1 className="Header__heading">Book Worm</h1>
+        <StyledHeader>
+            <h1 className="Header__heading">
+                <Emoji emoji={"🐛"} /> Book Worm
+            </h1>
             <p className="Header__subheading">
-                <Emoji emoji={'📔'}/>
-                <Emoji emoji={'🐛'}/>
                 A reading log for a notoriously inconsistent reader
             </p>
-        </header>
+        </StyledHeader>
     );
 };
 
