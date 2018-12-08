@@ -2,10 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import GenreIcon from "./GenreIcon";
+import Speed from "./Speed";
 import Rating from "./Rating";
 import Time from "./Time";
 
-import THEME from '../constants/theme';
+import THEME from "../constants/theme";
 
 export interface BookInt {
     title: string;
@@ -15,6 +16,7 @@ export interface BookInt {
     genre: string;
     comments: string;
     rating: number;
+    pages: number;
 }
 
 interface StyledLiInt {
@@ -45,16 +47,21 @@ const Book = (props: BookInt) => {
     const isComplete = props.endDate.length > 0;
     return (
         <StyledLi isComplete={isComplete}>
-            <header>
+            <main>
                 <GenreIcon genre={props.genre} />
                 <em>{props.title}</em> by {props.author}
                 {" - "}
                 <Time endDate={props.endDate} startDate={props.startDate} />
-            </header>
+            </main>
             {isComplete && (
-                <main>
+                <footer>
                     <Rating rating={props.rating} />
-                </main>
+                    <Speed
+                        endDate={props.endDate}
+                        startDate={props.startDate}
+                        pages={props.pages}
+                    />
+                </footer>
             )}
         </StyledLi>
     );

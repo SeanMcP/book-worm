@@ -16,24 +16,27 @@
         "endDate": "2018-11-01",
         "genre": "fantasy",
         "comments": "An epic ride!",
-        "rating": 5
+        "rating": 5,
+        "pages": 0
     },
     {
         "title": "Genesis",
         "author": "Moses",
         "startDate": "2018-10-01",
-        "endDate": "2018-11-01",
+        "endDate": "2018-10-15",
         "genre": "religion",
         "comments": "You won't believe how it begins!",
-        "rating": 5
+        "rating": 5,
+        "pages": 47
     },
     {
         "title": "Exodus",
         "author": "Moses",
-        "startDate": "2018-10-01",
+        "startDate": "2018-10-16",
         "endDate": "2018-11-01",
         "genre": "religion",
         "comments": "Started strong but faded towards the end",
-        "rating": 4
+        "rating": 4,
+        "pages": 39
     }
 ]
