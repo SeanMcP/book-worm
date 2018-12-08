@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "@emotion/styled";
 
 import BookList from "./BookList";
+import Footer from "./Footer";
 import Header from "./Header";
 import Stats from "./Stats";
 
@@ -17,7 +18,7 @@ const StyledBody = styled.div`
     width: 100%;
 `;
 
-const StyledDiv = styled.div`
+const StyledWrapper = styled.div`
     margin: 0 auto;
     max-width: 800px;
 `;
@@ -44,13 +45,14 @@ class App extends Component {
     render() {
         return (
             <StyledBody>
-                <StyledDiv>
+                <StyledWrapper>
                     <StyledBumper>
                         <Header />
                         <BookList books={this.state.books} />
                         <Stats completed={this.state.completed} />
                     </StyledBumper>
-                </StyledDiv>
+                </StyledWrapper>
+                <Footer />
             </StyledBody>
         );
     }

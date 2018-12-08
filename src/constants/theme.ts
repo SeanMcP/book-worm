@@ -1,7 +1,8 @@
 export default {
     BACKGROUND: '#18191A',
-    CONTENT: '#404344',
     BORDER_CONTENT: '#676C6E',
+    CONTENT: '#404344',
+    FOOTER: '#111213',
     TEXT: '#EEF9FF',
     TEXT_FAINT: '#A7AEB2'
 }
