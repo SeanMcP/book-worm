@@ -6,9 +6,11 @@ import Header from "./Header";
 import Stats from "./Stats";
 
 import { BookInt } from './Book';
+import THEME from '../constants/theme';
 
 const StyledBody = styled.div`
-    background: linear-gradient(to top, #57EBF5, #003687);
+    background: ${THEME.BACKGROUND};
+    color: ${THEME.TEXT};
     height: 100%;
     min-height: 100vh;
     min-width: 100vw;

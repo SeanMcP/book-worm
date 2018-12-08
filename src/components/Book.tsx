@@ -5,6 +5,8 @@ import GenreIcon from "./GenreIcon";
 import Rating from "./Rating";
 import Time from "./Time";
 
+import THEME from '../constants/theme';
+
 export interface BookInt {
     title: string;
     author: string;
@@ -20,17 +22,15 @@ interface StyledLiInt {
 }
 
 const StyledLi = styled.li`
-    background: white;
+    background: ${THEME.CONTENT};
     border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.125);
-    color: black;
     display: flex;
     flex-direction: column;
     opacity: ${(props: StyledLiInt) => (props.isComplete ? 0.5 : 1)};
     padding: 1rem;
     transition: all 200ms ease-in-out;
 
-    :not(:last-child) {
+    :not(:last-of-type) {
         margin-bottom: 1rem;
     }
 

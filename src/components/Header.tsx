@@ -3,17 +3,20 @@ import React from "react";
 import Emoji from "./Emoji";
 import styled from "@emotion/styled";
 
+import THEME from '../constants/theme';
+
 const StyledHeader = styled.header`
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: ${THEME.CONTENT};
     color: white;
     margin-bottom: 1rem;
     padding: 1rem 0;
 
-    > *:first-child {
+    > h1 {
         margin-top: 0;
     }
 
-    > *:last-child {
+    > p {
+        color: ${THEME.TEXT_FAINT};
         margin-bottom: 0;
     }
 `;

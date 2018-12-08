@@ -1,0 +1,18 @@
+export default {
+    BACKGROUND: '#18191A',
+    CONTENT: '#404344',
+    TEXT: '#EEF9FF',
+    TEXT_FAINT: '#A7AEB2'
+}
+
+// #EEF9FF
+// #EBF6FB
+// #E5EFF5
+// #DCE6EB
+// #CFD8DD
+// #BDC6CB
+// #A7AEB2
+// #8A9093
+// #676C6E
+// #404344
+// #18191A
