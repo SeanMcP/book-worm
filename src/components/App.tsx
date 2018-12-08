@@ -23,7 +23,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledBumper = styled.div`
-    margin: 0 1rem;
+    margin: 1rem;
 `;
 
 class App extends Component {

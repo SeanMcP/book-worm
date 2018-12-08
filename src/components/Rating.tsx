@@ -11,7 +11,10 @@ const Rating = (props: RatingInt) => {
     for (let i = 0; i < props.rating; i++) {
         rating.push(<Emoji emoji={"⭐️"} key={`star-${i}`} label={"star"} />);
     }
-    return <span className={"Rating"}>Rating: {rating}</span>;
+    return <section>
+        <Emoji emoji={'🏅'} />
+        Rating: {rating}
+    </section>;
 };
 
 export default Rating;

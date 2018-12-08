@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import GenreIcon from "./GenreIcon";
 import Speed from "./Speed";
 import Rating from "./Rating";
 import Time from "./Time";
+import Title from "./Title";
 
 import THEME from "../constants/theme";
 
@@ -41,6 +41,22 @@ const StyledLi = styled.li`
         opacity: 1;
         transform: scale(1.025);
     }
+
+    main {
+        align-items: center;
+        border-bottom: 1px solid ${THEME.BORDER_CONTENT};
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    @media screen and (max-width: 532px) {
+        main {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
 `;
 
 const Book = (props: BookInt) => {
@@ -48,21 +64,25 @@ const Book = (props: BookInt) => {
     return (
         <StyledLi isComplete={isComplete}>
             <main>
-                <GenreIcon genre={props.genre} />
-                <em>{props.title}</em> by {props.author}
-                {" - "}
-                <Time endDate={props.endDate} startDate={props.startDate} />
+                <Title
+                    author={props.author}
+                    genre={props.genre}
+                    title={props.title}
+                />
             </main>
-            {isComplete && (
-                <footer>
-                    <Rating rating={props.rating} />
-                    <Speed
-                        endDate={props.endDate}
-                        startDate={props.startDate}
-                        pages={props.pages}
-                    />
-                </footer>
-            )}
+            <footer>
+                <Time endDate={props.endDate} startDate={props.startDate} />
+                {isComplete && (
+                    <React.Fragment>
+                        <Rating rating={props.rating} />
+                        <Speed
+                            endDate={props.endDate}
+                            startDate={props.startDate}
+                            pages={props.pages}
+                        />
+                    </React.Fragment>
+                )}
+            </footer>
         </StyledLi>
     );
 };

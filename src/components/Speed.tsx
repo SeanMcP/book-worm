@@ -15,7 +15,7 @@ const Speed = (props: SpeedProps) => {
     if (props.pages) {
         return (
             <section>
-                Speed: <Emoji emoji={'🚀'}/> {Math.floor(props.pages / days)} pages/day
+                <Emoji emoji={'⏱'}/>Speed: {Math.floor(props.pages / days)} pages/day
             </section>
         );
     }

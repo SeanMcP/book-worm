@@ -1,6 +1,8 @@
 import React from "react";
 import dayjs from "dayjs";
 
+import Emoji from './Emoji';
+
 import { differenceInDays } from "../utils/TimeUtil";
 
 function formatDays(number: number) {
@@ -21,11 +23,12 @@ const Time = (props: TimeInt) => {
     const { endDate, startDate } = props;
     const days = differenceInDays(startDate, endDate);
     return (
-        <span>
-            {endDate ? "Finshed" : "Started"}{" "}
+        <section>
+            <Emoji emoji={'🗓'} />
+            {endDate ? "Finshed" : "Started"}{": "}
             {dayjs(startDate).format("ddd. M/D")} ({formatDays(days)}
             {!endDate && " ago"})
-        </span>
+        </section>
     );
 };
 
