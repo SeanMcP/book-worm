@@ -1,4 +1,5 @@
 import React from "react";
+import dayjs from "dayjs";
 
 import { differenceInDays } from "../utils/TimeUtil";
 
@@ -17,10 +18,13 @@ export interface TimeInt {
 }
 
 const Time = (props: TimeInt) => {
-    const days = differenceInDays(props.startDate, props.endDate);
+    const { endDate, startDate } = props;
+    const days = differenceInDays(startDate, endDate);
     return (
         <span>
-            {props.endDate ? "Completed" : "In progress"} ({formatDays(days)})
+            {endDate ? "Finshed" : "Started"}{" "}
+            {dayjs(startDate).format("ddd. M/D")} ({formatDays(days)}
+            {!endDate && " ago"})
         </span>
     );
 };

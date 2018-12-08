@@ -22,6 +22,10 @@ const StyledDiv = styled.div`
     max-width: 800px;
 `;
 
+const StyledBumper = styled.div`
+    margin: 0 1rem;
+`;
+
 class App extends Component {
     state = {
         books: [],
@@ -41,9 +45,11 @@ class App extends Component {
         return (
             <StyledBody>
                 <StyledDiv>
-                    <Header />
-                    <BookList books={this.state.books} />
-                    <Stats completed={this.state.completed} />
+                    <StyledBumper>
+                        <Header />
+                        <BookList books={this.state.books} />
+                        <Stats completed={this.state.completed} />
+                    </StyledBumper>
                 </StyledDiv>
             </StyledBody>
         );
