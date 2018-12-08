@@ -1,5 +1,6 @@
 import React from "react";
-import dayjs from "dayjs";
+
+import { differenceInDays } from "../utils/TimeUtil";
 
 function formatDays(number: number) {
     if (number === 0) {
@@ -16,19 +17,12 @@ export interface TimeInt {
 }
 
 const Time = (props: TimeInt) => {
-    const startDate = dayjs(props.startDate);
-    const endDate = dayjs(props.endDate);
-    let message;
-    if (props.endDate) {
-        // The book has been completed
-        const readingTime = endDate.diff(startDate, "day");
-        message = `Completed (${formatDays(readingTime)})`;
-    } else {
-        // The book is in progress
-        const readingTime = dayjs().diff(startDate, "day");
-        message = `In progress (${formatDays(readingTime)})`;
-    }
-    return <span className={"Time"}>{message}</span>;
+    const days = differenceInDays(props.startDate, props.endDate);
+    return (
+        <span>
+            {props.endDate ? "Completed" : "In progress"} ({formatDays(days)})
+        </span>
+    );
 };
 
 export default Time;
