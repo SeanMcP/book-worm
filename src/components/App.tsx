@@ -12,6 +12,8 @@ import THEME from '../constants/theme';
 const StyledBody = styled.div`
     background: ${THEME.BACKGROUND};
     color: ${THEME.TEXT};
+    display: flex;
+    flex-direction: column;
     height: 100%;
     min-height: 100vh;
     min-width: 100vw;
@@ -19,8 +21,10 @@ const StyledBody = styled.div`
 `;
 
 const StyledWrapper = styled.div`
+    flex: 1;
     margin: 0 auto;
     max-width: 800px;
+    width: 100%;
 `;
 
 const StyledBumper = styled.div`
