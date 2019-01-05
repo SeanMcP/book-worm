@@ -1,8 +1,11 @@
 import React from "react";
 import { capitalize } from "lodash";
+import styled from '@emotion/styled'
 
 import GenreIcon from "./GenreIcon";
 import { BookInt } from "./Book";
+
+import THEME from '../constants/theme';
 
 interface mostPopularInt {
     [key: string]: number;
@@ -36,6 +39,10 @@ export function getBookPopularityByKey(
     return sortedObj;
 }
 
+const StyledLi = styled.li`
+    color: ${THEME.TEXT_FAINT}
+`
+
 interface MostInt {
     completed: Array<BookInt>;
 }
@@ -47,16 +54,21 @@ function getMostPopular(books: Array<BookInt>, key: keyof BookInt) {
 const Stats = (props: MostInt) => {
     const mostAuthor = getMostPopular(props.completed, "author");
     const mostGenre = getMostPopular(props.completed, "genre");
+    if (!props.completed.length) {
+        return null;
+    }
     return (
-        <footer>
+        <section>
             <h2>Stats</h2>
-            <div>Most read author: {mostAuthor}</div>
-            <div>
-                Most read genre:{" "}
-                <GenreIcon genre={mostGenre.slice(0, mostGenre.indexOf(" "))} />{" "}
-                {capitalize(mostGenre)}
-            </div>
-        </footer>
+            <ul>
+                <StyledLi>Most read author: {mostAuthor}</StyledLi>
+                <StyledLi>
+                    Most read genre:{" "}
+                    <GenreIcon genre={mostGenre.slice(0, mostGenre.indexOf(" "))} />{" "}
+                    {capitalize(mostGenre)}
+                </StyledLi>
+            </ul>
+        </section>
     );
 };
 
