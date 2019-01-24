@@ -3,10 +3,10 @@
         "title": "The Hobbit",
         "author": "J.R.R. Tolkien",
         "startDate": "2018-12-01",
-        "endDate": "",
+        "endDate": "2019-01-23",
         "genre": "fantasy",
         "comments": "Probably my favorite book",
-        "pages": 0,
-        "rating": 0
+        "pages": 317,
+        "rating": 5
     }
 ]
